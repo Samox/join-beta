@@ -1,0 +1,62 @@
+body {
+  font-family: "JetBrains Mono", sans-serif;
+  color: wheat;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 6rem;
+}
+
+main {
+  background-color: green;
+  padding: 3rem;
+  max-width: 50rem;
+}
+
+form {
+  padding: 16px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  border: none;
+  background-color: red;
+  width: 60vw;
+  font-size: 3rem;
+  text-align: left;
+}
+
+::-webkit-input-placeholder {
+  text-align: left;
+}
+
+:-moz-placeholder {
+  text-align: left;
+}
+
+input::placeholder {
+  color: wheat;
+  font-family: "JetBrains Mono", sans-serif;
+  opacity: 1;
+}
+
+input:focus {
+  outline: none;
+}
+
+form:focus-within {
+  outline: 1px solid blue;
+}
+
+button {
+  border: 1px solid white;
+  background: white;
+  color: black;
+  font-size: 3rem;
+  padding: 0 1rem;
+}
