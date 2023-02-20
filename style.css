@@ -1,23 +1,30 @@
+/* https://coolors.co/152614-1e441e-2a7221-119822-31cb00 */
+
+:root {
+  --color-green-black: #070d07;
+  --color-primary: #31cb00;
+  --color-background: white;
+}
+
 body {
   font-family: "JetBrains Mono", sans-serif;
-  color: wheat;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  color: var(--color-green-black);
   font-size: 6rem;
+  background: #05200d;
+  margin: 0;
 }
 
 main {
-  background-color: green;
+  background-color: var(--color-background);
   padding: 3rem;
   max-width: 50rem;
+  position: relative;
+  z-index: 1;
 }
 
 form {
   padding: 16px;
-  background-color: red;
+  background-color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +32,7 @@ form {
 
 input {
   border: none;
-  background-color: red;
+  background-color: var(--color-primary);
   width: 60vw;
   font-size: 3rem;
   text-align: left;
@@ -40,7 +47,7 @@ input {
 }
 
 input::placeholder {
-  color: wheat;
+  color: var(--color-green-black);
   font-family: "JetBrains Mono", sans-serif;
   opacity: 1;
 }
@@ -55,8 +62,41 @@ form:focus-within {
 
 button {
   border: 1px solid white;
-  background: white;
-  color: black;
+  background: var(--color-background);
+  color: var(--color-green-black);
   font-size: 3rem;
   padding: 0 1rem;
+}
+
+.gradient-container {
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(to left top, var(--color-green-black), #162815);
+  isolation: isolate;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gradient-container::before,
+.gradient-container::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  content: "";
+}
+.gradient-container::before {
+  background: linear-gradient(30deg, #777, #000),
+    repeating-linear-gradient(30deg, #000, #999, #000 5%),
+    repeating-linear-gradient(-60deg, #000, #999, #000 5%);
+  background-blend-mode: screen, difference;
+  filter: contrast(50);
+  mix-blend-mode: multiply;
+}
+.gradient-container::after {
+  background: linear-gradient(90deg, black, #05200d);
+  mix-blend-mode: screen;
 }
